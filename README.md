@@ -26,4 +26,4 @@ There is one solution: ask Google Translate to translate his words and give them
 
 ## License
 
-GPL 3.0
+GNU 3.0
