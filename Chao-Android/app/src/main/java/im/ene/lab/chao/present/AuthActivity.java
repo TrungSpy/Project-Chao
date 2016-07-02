@@ -43,7 +43,7 @@ import com.google.firebase.auth.FirebaseUser;
 import im.ene.lab.chao.R;
 import im.ene.lab.chao.present.timeline.TimelineActivity;
 
-public class MainActivity extends AppCompatActivity implements FacebookCallback<LoginResult> {
+public class AuthActivity extends AppCompatActivity implements FacebookCallback<LoginResult> {
 
   private static final String TAG = "MainActivity";
 
@@ -146,12 +146,12 @@ public class MainActivity extends AppCompatActivity implements FacebookCallback<
             // signed in user can be handled in the listener.
             if (!task.isSuccessful()) {
               Log.w(TAG, "signInWithCredential", task.getException());
-              Toast.makeText(MainActivity.this, "Authentication failed.", Toast.LENGTH_SHORT)
+              Toast.makeText(AuthActivity.this, "Authentication failed.", Toast.LENGTH_SHORT)
                   .show();
             }
             // [START_EXCLUDE]
             // hideProgressDialog();
-            startActivity(new Intent(MainActivity.this, TimelineActivity.class));
+            startActivity(new Intent(AuthActivity.this, TimelineActivity.class));
             // [END_EXCLUDE]
           }
         });

@@ -26,7 +26,7 @@ import butterknife.BindView;
 import com.bumptech.glide.Glide;
 import im.ene.lab.chao.R;
 import im.ene.lab.chao.base.recyclerview.ViewHolder;
-import im.ene.lab.chao.data.entity.Article;
+import im.ene.lab.chao.data.model.Article;
 import im.ene.lab.chao.util.CircleTransform;
 
 /**

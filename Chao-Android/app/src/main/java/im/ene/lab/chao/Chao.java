@@ -17,9 +17,17 @@
 package im.ene.lab.chao;
 
 import android.app.Application;
+import android.content.Context;
+import android.content.SharedPreferences;
 import com.facebook.FacebookSdk;
 import com.facebook.appevents.AppEventsLogger;
 import com.facebook.stetho.Stetho;
+import com.uphyca.stetho_realm.RealmInspectorModulesProvider;
+import im.ene.lab.chao.service.TatoebaDataParserService;
+import io.realm.DynamicRealm;
+import io.realm.Realm;
+import io.realm.RealmConfiguration;
+import io.realm.RealmMigration;
 
 /**
  * Created by eneim on 7/2/16.
@@ -28,10 +36,37 @@ public class Chao extends Application {
 
   private static Chao sInstance;
 
+  public static SharedPreferences getPref() {
+    return sInstance.getSharedPreferences("chao.project", Context.MODE_PRIVATE);
+  }
+
   @Override public void onCreate() {
     super.onCreate();
     sInstance = this;
-    Stetho.initializeWithDefaults(this);
+
+    RealmConfiguration configuration =
+        new RealmConfiguration.Builder(this).deleteRealmIfMigrationNeeded()
+            .migration(new RealmMigration() {
+              @Override public void migrate(DynamicRealm realm, long oldVersion, long newVersion) {
+                Chao.getPref()
+                    .edit()
+                    .putBoolean(TatoebaDataParserService.PREF_LOAD_SENTENCE, false)
+                    .apply();
+                Chao.getPref()
+                    .edit()
+                    .putBoolean(TatoebaDataParserService.PREF_LOAD_LINKS, false)
+                    .apply();
+              }
+            })
+            .name("chao.realm")
+            .build();
+
+    Realm.setDefaultConfiguration(configuration);
+
+    Stetho.initialize(Stetho.newInitializerBuilder(this)
+        .enableDumpapp(Stetho.defaultDumperPluginsProvider(this))
+        .enableWebKitInspector(RealmInspectorModulesProvider.builder(this).build())
+        .build());
 
     FacebookSdk.sdkInitialize(getApplicationContext());
     AppEventsLogger.activateApp(this);

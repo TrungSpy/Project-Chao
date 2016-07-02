@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package im.ene.lab.chao.data.entity;
+package im.ene.lab.chao.data.model;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;

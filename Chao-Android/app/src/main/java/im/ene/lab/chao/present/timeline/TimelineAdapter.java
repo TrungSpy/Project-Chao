@@ -20,7 +20,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import im.ene.lab.chao.base.recyclerview.Adapter;
-import im.ene.lab.chao.data.entity.Article;
+import im.ene.lab.chao.data.model.Article;
 
 /**
  * Created by eneim on 7/2/16.

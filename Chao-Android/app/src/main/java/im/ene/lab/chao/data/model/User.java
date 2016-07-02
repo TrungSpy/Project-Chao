@@ -14,21 +14,20 @@
  * limitations under the License.
  */
 
-package im.ene.lab.chao.data.entity;
+package im.ene.lab.chao.data.model;
 
 import com.google.gson.annotations.Expose;
-import io.realm.RealmList;
+import com.google.gson.annotations.SerializedName;
 import io.realm.RealmObject;
-import io.realm.annotations.PrimaryKey;
 
 /**
  * Created by eneim on 7/2/16.
  */
-public class Article extends RealmObject {
+public class User extends RealmObject {
 
-  @PrimaryKey @Expose public String id;
+  @Expose public String id;
 
-  @Expose public Sentence source;
+  @SerializedName("user_name") @Expose public String userName;
 
-  @Expose public RealmList<Sentence> translations;
+  @SerializedName("mother_tongue") @Expose public String motherTongue;
 }
