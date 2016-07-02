@@ -17,6 +17,7 @@
 apply plugin: 'com.android.application'
 
 apply plugin: 'realm-android'
+apply plugin: 'com.neenbedankt.android-apt'
 
 android {
   compileSdkVersion 24
@@ -52,12 +53,16 @@ android {
       signingConfig signingConfigs.release
       minifyEnabled false
       proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
+      buildConfigField("String", "BASE_URL", "\"http://47.88.195.187:3000\"")
     }
 
     debug {
       signingConfig signingConfigs.release
       minifyEnabled false
       proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
+      buildConfigField("String", "BASE_URL", "\"http://397b8705.ngrok.io/\"")
     }
   }
 
@@ -76,6 +81,8 @@ dependencies {
   testCompile 'junit:junit:4.12'
   compile "com.android.support:appcompat-v7:${supportLibraryVersion}"
   compile "com.android.support:design:${supportLibraryVersion}"
+  compile "com.android.support:cardview-v7:${supportLibraryVersion}"
+  compile "com.android.support:recyclerview-v7:${supportLibraryVersion}"
 
   compile("com.squareup.retrofit2:retrofit:${rootProject.ext.retrofit2Version}") {
     exclude group: 'com.squareup.okhttp3', module: 'okhttp'
@@ -92,13 +99,15 @@ dependencies {
   compile 'com.facebook.stetho:stetho:1.3.1'
   compile 'com.facebook.stetho:stetho-okhttp3:1.3.1'
 
-  compile "com.google.android.gms:play-services-base:9.2.0"
-  compile "com.google.android.gms:play-services-auth:9.2.0"
-  compile "com.google.android.gms:play-services-identity:9.2.0"
+  compile 'com.github.bumptech.glide:glide:3.7.0'
+  compile 'com.github.bumptech.glide:okhttp3-integration:1.4.0@aar'
 
-  // compile group: 'com.google.api-client', name: 'google-api-client', version: '1.22.0'
-  compile group: 'com.google.apis', name: 'google-api-services-oauth2', version: 'v2-rev113-1.22.0'
-  compile group: 'com.google.apis', name: 'google-api-services-translate', version: 'v2-rev46-1.22.0'
+  compile 'com.google.android:flexbox:0.1.3'
 
-  compile group: 'com.google.api-client', name: 'google-api-client-android', version: '1.22.0'
+  compile 'org.ocpsoft.prettytime:prettytime:4.0.1.Final'
+  compile 'com.jakewharton.threetenabp:threetenabp:1.0.3'
+
+  compile 'com.jakewharton:butterknife:8.0.1'
+  apt 'com.jakewharton:butterknife-compiler:8.0.1'
+
 }
