@@ -35,4 +35,13 @@ router.route('/translate').post(function (req, res) {
 //     });
 // });
 
+
+// Timeline
+
+// 1.   GET /timeline
+//      Return timeline
+router.get('/timeline', function (req, res) {
+    
+});
+
 module.exports = router;
