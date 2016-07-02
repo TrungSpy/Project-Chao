@@ -21,19 +21,24 @@
         android:launchMode="singleTop"
         android:name=".present.MainActivity"
         android:screenOrientation="portrait"
-        android:theme="@style/AppTheme"
+        android:theme="@style/AppTheme.NoActionBar"
         />
 
     <activity-alias
         android:label="@string/app_name"
         android:name="Launcher"
-        android:targetActivity=".present.timeline.TimelineActivity">
+        android:targetActivity=".present.MainActivity">
       <intent-filter>
         <action android:name="android.intent.action.MAIN"/>
 
         <category android:name="android.intent.category.LAUNCHER"/>
       </intent-filter>
     </activity-alias>
+
+    <meta-data
+        android:name="com.facebook.sdk.ApplicationId"
+        android:value="@string/facebook_app_id"/>
+
   </application>
 
 </manifest>

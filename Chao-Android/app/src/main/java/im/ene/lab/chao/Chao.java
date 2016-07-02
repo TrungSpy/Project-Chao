@@ -17,6 +17,8 @@
 package im.ene.lab.chao;
 
 import android.app.Application;
+import com.facebook.FacebookSdk;
+import com.facebook.appevents.AppEventsLogger;
 import com.facebook.stetho.Stetho;
 
 /**
@@ -30,6 +32,9 @@ public class Chao extends Application {
     super.onCreate();
     sInstance = this;
     Stetho.initializeWithDefaults(this);
+
+    FacebookSdk.sdkInitialize(getApplicationContext());
+    AppEventsLogger.activateApp(this);
   }
 
   public static Chao getInstance() {

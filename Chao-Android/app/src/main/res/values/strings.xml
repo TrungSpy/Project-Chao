@@ -27,4 +27,6 @@
     GitHubのWikiのは、他の人がコンテンツを提供させるための簡単な方法です。任意のGitHubのユーザーが作成できると
     エディット・ページは、ドキュメント、例、サポート、またはあなたが望むもののために使用します。
   </string>
+
+  <string name="facebook_app_id">296304347371247</string>
 </resources>

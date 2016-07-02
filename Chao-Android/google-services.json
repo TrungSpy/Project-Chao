@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "681791688378",
+    "firebase_url": "https://project-chao.firebaseio.com",
+    "project_id": "project-chao",
+    "storage_bucket": "project-chao.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:681791688378:android:00e8c3b362b15982",
+        "android_client_info": {
+          "package_name": "im.ene.lab.chao"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "681791688378-35ir2080mop9o99ovdeegpkrfo8658vl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "im.ene.lab.chao",
+            "certificate_hash": "9EAED6DE67987347206ACFAB9171E17059A1D647"
+          }
+        },
+        {
+          "client_id": "681791688378-44u8rquf013b76aam3goinlboc7pr7oe.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA61gMnRLzEDYjSYbm5OBC_g0dFx2EF1OA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "681791688378-44u8rquf013b76aam3goinlboc7pr7oe.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

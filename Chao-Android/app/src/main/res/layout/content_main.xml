@@ -13,9 +13,27 @@
     tools:showIn="@layout/activity_main"
     >
 
-  <TextView
+  <FrameLayout
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:text="Hello World!"
-      />
+      >
+
+    <com.facebook.login.widget.LoginButton
+        android:id="@+id/login_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="30dp"
+        android:layout_marginTop="30dp"
+        />
+
+    <Button
+        android:id="@+id/overlap_facebook_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="48dp"
+        android:text="Facebook Login"
+        />
+
+  </FrameLayout>
 </RelativeLayout>
