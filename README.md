@@ -22,6 +22,7 @@ There is one solution: ask Google Translate to translate his words and give them
 - Google Translation Api as backed service, while human is the one who give the better translation.
 - Google Firebase for Realtime Database.
 - Tatoeba.org public data.
+- Nodejs, ngrok 2.
 - Other low level API from Android and Java.
 
 ## License
